@@ -73,7 +73,9 @@ public class Version2 {
         }
         if(secondYoungestSibling != -1) {
             PCBArray[secondYoungestSibling].youngerSibling = newProcess.processIndex;
-            PCBArray[newProcess.processIndex].olderSibling = PCBArray[secondYoungestSibling].processIndex;
+            if(newProcess.processIndex != -1) {
+                PCBArray[newProcess.processIndex].olderSibling = PCBArray[secondYoungestSibling].processIndex;
+            }
         } else {
             PCBArray[parentPid].firstChild = newProcess.processIndex;
         }
@@ -148,7 +150,7 @@ public class Version2 {
                 }
             }
         }
-        //System.out.println();
+        System.out.println();
    }
 
    /* If you need or want more methods, feel free to add them. */
