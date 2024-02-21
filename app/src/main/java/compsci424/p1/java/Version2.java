@@ -60,7 +60,7 @@ public class Version2 {
         newProcess.parentPid = parentPid;
         int secondYoungestSibling = -1;
         for(int i = 0; i < PCBArray.length; i++) {
-            if(PCBArray[i] != null && PCBArray[i].parentPid == parentPid && PCBArray[i].youngerSibling == -1) {
+            if(PCBArray[i] != null && i == parentPid && PCBArray[i].youngerSibling == -1) {
                 secondYoungestSibling = i;
             }
         }
@@ -71,7 +71,7 @@ public class Version2 {
                 break;
             }
         }
-        if(secondYoungestSibling != -1 && secondYoungestSibling < 15) {
+        if(secondYoungestSibling != -1) {
             PCBArray[secondYoungestSibling].youngerSibling = newProcess.processIndex;
             PCBArray[newProcess.processIndex].olderSibling = PCBArray[secondYoungestSibling].processIndex;
         } else {
