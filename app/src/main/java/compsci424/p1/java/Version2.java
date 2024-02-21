@@ -148,7 +148,7 @@ public class Version2 {
                 }
             }
         }
-        System.out.println();
+        //System.out.println();
    }
 
    /* If you need or want more methods, feel free to add them. */
