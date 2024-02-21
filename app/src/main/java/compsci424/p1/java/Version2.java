@@ -71,7 +71,7 @@ public class Version2 {
                 break;
             }
         }
-        if(secondYoungestSibling != -1) {
+        if(secondYoungestSibling != -1 && secondYoungestSibling < 15) {
             PCBArray[secondYoungestSibling].youngerSibling = newProcess.processIndex;
             PCBArray[newProcess.processIndex].olderSibling = PCBArray[secondYoungestSibling].processIndex;
         } else {
