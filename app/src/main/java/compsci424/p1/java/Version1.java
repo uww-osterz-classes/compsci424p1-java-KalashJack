@@ -45,7 +45,7 @@ public class Version1 {
         // If parentPid is not in the process hierarchy, do nothing; 
         // your code may return an error code or message in this case,
         // but it should not halt
-        if(PCBArray[parentPid] == null) {
+        if(parentPid < 0 || PCBArray[parentPid] == null) {
             System.out.println("ERROR: parentPid not found in process hierarchy; create failed for parentPid " + parentPid + "!");
             return -1;
         }
